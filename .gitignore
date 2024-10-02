@@ -1,0 +1,14 @@
+.vscode
+.idea
+/plugins
+/vendor
+**/node_modules
+themes/alben/build/
+**/package-lock.json
+.env
+/uploads
+/debug.log
+/ewww
+/upgrade
+/upgrade-temp-backup
+/languages

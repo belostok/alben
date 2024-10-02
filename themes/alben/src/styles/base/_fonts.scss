@@ -1,0 +1,38 @@
+$font-display: swap;
+$font-style: normal;
+
+@font-face {
+	font-family: 'Heebo';
+	src: url('../../fonts/Heebo-Regular.woff2') format('woff2 supports variations'),
+	url('../../fonts/Heebo-Regular.woff2') format('woff2-variations');
+	font-display: $font-display;
+	font-weight: normal;
+	font-style: $font-style;
+}
+
+@font-face {
+	font-family: 'Heebo';
+	src: url('../../fonts/Heebo-Light.woff2') format('woff2 supports variations'),
+	url('../../fonts/Heebo-Light.woff2') format('woff2-variations');
+	font-display: $font-display;
+	font-weight: 300;
+	font-style: $font-style;
+}
+
+@font-face {
+	font-family: 'Heebo';
+	src: url('../../fonts/Heebo-Medium.woff2') format('woff2 supports variations'),
+	url('../../fonts/Heebo-Medium.woff2') format('woff2-variations');
+	font-display: $font-display;
+	font-weight: 500;
+	font-style: $font-style;
+}
+
+@font-face {
+	font-family: 'Heebo';
+	src: url('../../fonts/Heebo-Bold.woff2') format('woff2 supports variations'),
+	url('../../fonts/Heebo-Bold.woff2') format('woff2-variations');
+	font-display: $font-display;
+	font-weight: 700;
+	font-style: $font-style;
+}
