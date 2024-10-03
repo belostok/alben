@@ -1,3 +1,9 @@
+<?php
+use function albenTheme\Helpers\trim_string;
+
+$logo_title = trim_string( get_field( 'acf_logo_title', 'option' ) );
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -13,14 +19,16 @@
 
 <div class="main-wrapper flex fdc relative">
 	<?php alben_inline_style( 'header' ); ?>
-	<header class="header">
-		<div class="wrapper header__wrapper">
-			<div class="header__inner flex jcspb">
-				<div class="header__logo relative">
-					<?php alben_the_logo(); ?>
+	<header class="alben-header alben-container">
+		<div class="wrapper alben-header__wrapper">
+			<div class="alben-header__inner flex fdc aic">
+				<div class="alben-header__logo-container relative">
+					<a href="<?php echo esc_url( home_url() ); ?>" class="alben-header__logo">
+						<h1><?php echo esc_html( $logo_title ); ?></h1>
+					</a>
 				</div>
 
-				<nav class="header__nav flex fwrap">
+				<nav class="alben-header__nav flex fwrap">
 					<?php
 					wp_nav_menu(
 						array(

@@ -1,12 +1,44 @@
 @import '../helpers';
 @import '../helpers/helpers-front-only';
 
-.header {
+.alben-header {
+	padding-top: inEm(60px);
+	padding-bottom: inEm(60px);
 
-}
+	a {
+		text-decoration: none;
+		transition: opacity $transition-default;
 
-@include sm-down {
-	.header {
+		@include mouseover {
+			opacity: .7;
+		}
+	}
 
+	&__logo {
+		text-transform: uppercase;
+		font-size: inEm(20px);
+		font-weight: 700;
+		letter-spacing: 0.2em;
+	}
+
+	&__nav {
+		margin-top: inEm(40px);
+
+		ul {
+			list-style: none;
+			column-gap: inEm(40px);
+
+			li {
+
+				a {
+					font-size: inEm(18px);
+					transition: opacity $transition-default;
+
+					@include mouseover {
+						opacity: .7;
+					}
+				}
+			}
+		}
 	}
 }
