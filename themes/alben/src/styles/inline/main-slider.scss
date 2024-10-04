@@ -5,8 +5,22 @@
 
 	&__slide {
 		width: max-content;
-		max-width: $base-container-width;
+		max-width: 100%;
 		height: auto;
+		opacity: .7;
+		transition: opacity $transition-default;
+
+		&.swiper-slide-active {
+			opacity: 1;
+		}
+
+		&:not(&.swiper-slide-active) {
+			cursor: pointer;
+
+			@include mouseover {
+				opacity: 1;
+			}
+		}
 	}
 
 	&__image {

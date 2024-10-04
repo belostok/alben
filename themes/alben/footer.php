@@ -64,6 +64,8 @@ $copyright = $copyright ? do_shortcode( $copyright ) : '';
 	</div>
 </footer><!-- /.footer -->
 
+<?php get_template_part( 'partials/gallery-modal' ); ?>
+
 </div><!-- /.main-wrapper -->
 <?php wp_footer(); ?>
 

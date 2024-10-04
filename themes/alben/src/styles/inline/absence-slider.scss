@@ -1,0 +1,55 @@
+@import '../helpers';
+@import '../helpers/helpers-front-only';
+
+.alben-absence-slider {
+	max-width: $small-container-width;
+	margin-inline: auto;
+
+	&__slider {
+		width: 100%;
+		height: inEm(579px);
+		overflow: hidden;
+	}
+
+	&__image-container {
+		width: 100%;
+		height: inEm(510px);
+	}
+
+	&__footer {
+		margin-top: inEm(20px);
+	}
+
+	&__play-button {
+		width: inEm(20px);
+		height: inEm(20px);
+	}
+
+	&__play-button-image {
+		pointer-events: none;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		&_play {
+			display: none;
+		}
+	}
+
+	&__nav-side {
+		width: inEm(80px);
+		margin-right: inEm(40px);
+	}
+
+	&__nav {
+		width: inEm(20px);
+		height: inEm(20px);
+	}
+}
+
+.alben-absence-content {
+	margin: inEm(20px) auto 0;
+	max-width: $small-container-width;
+	text-align: center;
+}

@@ -6,7 +6,7 @@
 	padding-bottom: inEm(60px);
 
 	&__wrapper {
-		max-width: 980px;
+		max-width: $small-container-width;
 	}
 
 	&__form-container {
@@ -63,7 +63,7 @@
 	}
 
 	&__social-container {
-		margin-top: inEm(40px);
+		margin-top: inEm(20px);
 	}
 
 	&__social-items {

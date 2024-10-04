@@ -1,0 +1,42 @@
+@import '../helpers';
+@import '../helpers/helpers-front-only';
+
+.alben-main-gallery {
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: flex-start;
+		gap: 10px;
+	}
+
+	&__item {
+		position: relative;
+		cursor: pointer;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba($clr-text, .7);
+			opacity: 0;
+			transition: opacity $transition-default;
+		}
+
+		@include mouseover {
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__image {
+		height: auto;
+		display: block;
+	}
+}

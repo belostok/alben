@@ -1,9 +1,9 @@
 <?php
 acf_add_local_field_group(
 	array(
-		'key'    => 'group_66fd5fc83685f',
-		'title'  => esc_attr__( 'Photos', 'alben' ),
-		'fields' => array(
+		'key'                   => 'group_66fd5fc83685f',
+		'title'                 => esc_attr__( 'Photos', 'alben' ),
+		'fields'                => array(
 			array(
 				'key'                  => 'field_66fd5fc88e1cb',
 				'label'                => esc_attr__( 'Photos', 'alben' ),
@@ -43,6 +43,13 @@ acf_add_local_field_group(
 					'param'    => 'page_template',
 					'operator' => '==',
 					'value'    => 'default',
+				),
+			),
+			array(
+				array(
+					'param'    => 'page_template',
+					'operator' => '==',
+					'value'    => 'templates/template-absence.php',
 				),
 			),
 		),

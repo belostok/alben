@@ -3,7 +3,6 @@
 const ALBEN_WP_ENV         = 'development';
 const ALBEN_PATH           = __DIR__ . DIRECTORY_SEPARATOR;
 const ALBEN_THEME_INCLUDES = ALBEN_PATH . 'includes' . DIRECTORY_SEPARATOR;
-const ALBEN_THEME_BLOCKS   = ALBEN_PATH . 'build/blocks/';
 
 define( 'ALBEN_TEMPLATE_URL', get_template_directory_uri() . '/' );
 define( 'ALBEN_STYLESHEET_URL', get_stylesheet_uri() );
@@ -14,6 +13,7 @@ define( 'ALBEN_IS_MOB', wp_is_mobile() );
 global $alben_used_inline_styles;
 $alben_used_inline_styles = [];
 
+require_once ALBEN_THEME_INCLUDES . 'classes/class-constants.php';
 require_once ALBEN_THEME_INCLUDES . 'acf.php';
 require_once ALBEN_THEME_INCLUDES . 'cf7.php';
 require_once ALBEN_THEME_INCLUDES . 'cleaner.php';
@@ -24,6 +24,7 @@ require_once ALBEN_THEME_INCLUDES . 'cpt.php';
 require_once ALBEN_THEME_INCLUDES . 'customizer.php';
 require_once ALBEN_THEME_INCLUDES . 'enqueue.php';
 require_once ALBEN_THEME_INCLUDES . 'helpers.php';
+require_once ALBEN_THEME_INCLUDES . 'hooks.php';
 require_once ALBEN_THEME_INCLUDES . 'media.php';
 require_once ALBEN_THEME_INCLUDES . 'media-svg.php';
 require_once ALBEN_THEME_INCLUDES . 'shortcodes.php';
