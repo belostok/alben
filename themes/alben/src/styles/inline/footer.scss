@@ -43,6 +43,11 @@
 			.wpcf7-submit {
 				width: inEm(100px);
 				border: none;
+				transition: background $transition-default;
+
+				@include mouseover {
+					background: $clr-dark-gray;
+				}
 			}
 		}
 

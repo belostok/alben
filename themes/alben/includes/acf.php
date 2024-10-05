@@ -54,6 +54,7 @@ function register_fields() {
 		'options',
 		'photos',
 		'images',
+		'contacts',
 	];
 	foreach ( $items as $item ) {
 		include_once sprintf( '%s/acf-fields/%s.php', __DIR__, $item );

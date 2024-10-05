@@ -1,0 +1,107 @@
+@import '../helpers';
+@import '../helpers/helpers-front-only';
+
+.alben-contacts {
+	max-width: $small-container-width;
+	margin-inline: auto;
+	column-gap: inEm(60px);
+
+	&__image-container {
+		width: inEm(600px);
+		flex-shrink: 0;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__form-section {
+		flex-grow: 1;
+
+		& > * {
+
+			&:not(:last-child) {
+				margin-bottom: inEm(5px);
+			}
+		}
+	}
+
+	&__name,
+	&__phone,
+	&__email {
+		font-size: inEm(20px);
+		font-weight: 300;
+		text-decoration: none;
+	}
+
+	&__name {
+		font-weight: 400;
+	}
+
+	&__social-items {
+		gap: inEm(10px);
+		margin-top: inEm(15px);
+	}
+
+	&__social-item {
+		width: inEm(30px);
+		height: inEm(30px);
+	}
+
+	&__form-container {
+		position: relative;
+		margin-top: inEm(10px);
+
+		input,
+		textarea {
+			background: $clr-bg;
+			border: 1px solid $clr-dark-gray;
+			font-family: $font-family-primary;
+			font-size: inEm(16px);
+			font-weight: 300;
+			color: $clr-text;
+			direction: rtl !important;
+			width: 100%;
+			margin-top: inRem(10px);
+
+			&.wpcf7-not-valid {
+				border-color: $clr-action;
+			}
+		}
+
+		input {
+			height: inRem(34px);
+			padding-inline: inRem(10px);
+		}
+
+		textarea {
+			resize: none;
+			padding: inRem(5px) inRem(10px);
+			height: inRem(150px);
+		}
+
+		.wpcf7-submit {
+			width: inEm(100px);
+			border: none;
+			background: $clr-gray;
+			transition: background $transition-default;
+
+			@include mouseover {
+				background: $clr-dark-gray;
+			}
+		}
+
+		.wpcf7-spinner {
+			position: absolute;
+			width: inEm(24px);
+			height: inEm(24px);
+			bottom: inEm(5px);
+		    left: inEm(85px);
+		}
+
+		.wpcf7-response-output,
+		.wpcf7-not-valid-tip {
+			display: none !important;
+		}
+	}
+}

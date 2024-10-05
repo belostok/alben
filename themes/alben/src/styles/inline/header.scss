@@ -30,6 +30,12 @@
 
 			li {
 
+				&.current-menu-item {
+					color: $clr-text;
+					font-weight: 400;
+					pointer-events: none;
+				}
+
 				a {
 					font-size: inEm(18px);
 					transition: opacity $transition-default;

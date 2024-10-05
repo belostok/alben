@@ -2,6 +2,8 @@
 @import '../helpers/helpers-front-only';
 
 .alben-absence-slider {
+	$root: &;
+
 	max-width: $small-container-width;
 	margin-inline: auto;
 
@@ -20,9 +22,33 @@
 		margin-top: inEm(20px);
 	}
 
+	&__nav-section {
+		z-index: 1;
+		left: 0;
+        top: calc(100% - #{inEm(48px)});
+		background: $clr-bg;
+	}
+
 	&__play-button {
 		width: inEm(20px);
 		height: inEm(20px);
+
+		&_pause {
+
+			#{$root} {
+
+				&__play-button-image {
+
+					&_pause {
+						display: none;
+					}
+
+					&_play {
+						display: block;
+					}
+				}
+			}
+		}
 	}
 
 	&__play-button-image {
@@ -46,10 +72,25 @@
 		width: inEm(20px);
 		height: inEm(20px);
 	}
+
+	&__name {
+		font-size: inEm(18px);
+		font-weight: 400;
+	}
+
+	&__place {
+		font-size: inEm(13px);
+		font-weight: 400;
+	}
+
+	&__pagination {
+		font-size: inEm(13px);
+	}
 }
 
 .alben-absence-content {
-	margin: inEm(20px) auto 0;
-	max-width: $small-container-width;
+	font-size: max(13px, inEm(13px));
+	margin: inRem(20px) auto 0;
+	max-width: inRem(800px);
 	text-align: center;
 }

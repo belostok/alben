@@ -1,7 +1,9 @@
-import Swiper from 'swiper';
+import Swiper, { Autoplay } from 'swiper';
+
+Swiper.use( [ Autoplay ] );
 
 export default () => {
-	const sliderContainers = document.querySelectorAll('.js-main-slider');
+	const sliderContainers = document.querySelectorAll( '.js-main-slider' );
 
 	if ( ! sliderContainers || ! sliderContainers.length ) {
 		return null;
