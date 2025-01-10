@@ -23,6 +23,7 @@ export default () => {
 		// fadeEffect: {
 		// 	crossFade: true
 		// },
+		autoHeight: true,
 		autoplay: slides.length > 1 ? autoplay : false,
 		navigation: {
 			nextEl: '.js-absence-nav-prev',
@@ -33,6 +34,11 @@ export default () => {
 			type: 'custom',
 			renderCustom: function( swiper, current, total ) {
 				return current + '/' + total;
+			}
+		},
+		breakpoints: {
+			992: {
+				autoHeight: false
 			}
 		}
 	} );

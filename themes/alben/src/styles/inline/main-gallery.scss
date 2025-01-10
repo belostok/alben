@@ -3,17 +3,30 @@
 
 .alben-main-gallery {
 
+	@include md-down {
+		margin-left: inEm(-16px);
+		margin-right: inEm(-16px);
+	}
+
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
 		justify-content: flex-start;
 		gap: 10px;
+
+		@include md-down {
+			row-gap: inEm(15px);
+		}
 	}
 
 	&__item {
 		position: relative;
 		cursor: pointer;
+
+		@include md-down {
+			width: 100%;
+		}
 
 		&::after {
 			content: '';
@@ -38,5 +51,9 @@
 	&__image {
 		height: auto;
 		display: block;
+
+		@include md-down {
+			width: 100%;
+		}
 	}
 }

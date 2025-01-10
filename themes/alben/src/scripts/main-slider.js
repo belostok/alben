@@ -31,6 +31,12 @@ export default () => {
 				loopedSlides: slides.length,
 				loop: slides.length > 1,
 				autoplay: isAutoplay && slides.length > 1 ? autoplay : false,
+				autoHeight: true,
+				breakpoints: {
+					992: {
+						autoHeight: false
+					}
+				}
 			} );
 		}
 	} );

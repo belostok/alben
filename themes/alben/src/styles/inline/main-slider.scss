@@ -3,12 +3,29 @@
 
 .alben-main-slider {
 
+	@include md-down {
+		overflow: hidden;
+		margin-inline: inEm(-16px);}
+
+	&__slider {
+		max-height: 85dvh;
+
+		@include md-down {
+			max-height: none;
+			height: auto;
+		}
+	}
+
 	&__slide {
 		width: max-content;
 		max-width: 100%;
 		height: auto;
 		opacity: .7;
 		transition: opacity $transition-default;
+
+		@include md-down {
+			width: 100%;
+		}
 
 		&.swiper-slide-active {
 			opacity: 1;
@@ -26,5 +43,9 @@
 	&__image {
 		display: block;
 		height: 100%;
+
+		@include md-down {
+			height: auto;
+		}
 	}
 }

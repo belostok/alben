@@ -8,6 +8,7 @@ import ajaxGallery from './scripts/ajax-gallery';
 import modalGallery from './scripts/modal-gallery';
 import fullscreen from './scripts/fullscreen';
 import absenceSlider from './scripts/absence-slider';
+import mobileMenu from './scripts/mobile-menu';
 
 documentReady( () => {
 	mainSlider();
@@ -16,4 +17,5 @@ documentReady( () => {
 	modalGallery();
 	fullscreen();
 	absenceSlider();
+	mobileMenu();
 } );

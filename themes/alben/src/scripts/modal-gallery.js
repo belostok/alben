@@ -1,8 +1,13 @@
 import Swiper, { Navigation } from 'swiper';
+import { isMobile } from './helpers';
 
 Swiper.use( [ Navigation ] );
 
 export default () => {
+	if ( isMobile ) {
+		return null;
+	}
+
 	const items = document.querySelectorAll( '.alben-main-gallery__item' );
 	const modal = document.querySelector( '.js-gallery-modal' );
 

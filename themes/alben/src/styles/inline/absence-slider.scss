@@ -11,15 +11,39 @@
 		width: 100%;
 		height: inEm(579px);
 		overflow: hidden;
+
+		@include md-down {
+			width: auto;
+			height: auto;
+			margin-left: inEm(-16px);
+			margin-right: inEm(-16px);
+		}
+	}
+
+	&__slide {
+
+		@include md-down {
+			height: auto;
+		}
 	}
 
 	&__image-container {
 		width: 100%;
 		height: inEm(510px);
+
+		@include md-down {
+			height: auto;
+		}
 	}
 
 	&__footer {
 		margin-top: inEm(20px);
+
+		@include md-down {
+			height: inEm(39px);
+			margin-top: inEm(10px);
+			padding-inline: inEm(16px);
+		}
 	}
 
 	&__nav-section {
@@ -27,6 +51,11 @@
 		left: 0;
         top: calc(100% - #{inEm(48px)});
 		background: $clr-bg;
+
+		@include md-down {
+			left: inEm(16px);
+			top: calc(100% - #{inEm(38px)});
+		}
 	}
 
 	&__play-button {
@@ -73,14 +102,29 @@
 		height: inEm(20px);
 	}
 
+	&__name-section {
+
+		@include md-down {
+			width: calc(100% - #{inEm(150px)});
+		}
+	}
+
 	&__name {
 		font-size: inEm(18px);
 		font-weight: 400;
+
+		@include md-down {
+			@include ellipsis(100%);
+		}
 	}
 
 	&__place {
 		font-size: inEm(13px);
 		font-weight: 400;
+
+		@include md-down {
+			@include ellipsis(100%);
+		}
 	}
 
 	&__pagination {
@@ -93,4 +137,9 @@
 	margin: inRem(20px) auto 0;
 	max-width: inRem(800px);
 	text-align: center;
+
+	@include md-down {
+		max-width: none;
+		font-size: inEm(16px);
+	}
 }

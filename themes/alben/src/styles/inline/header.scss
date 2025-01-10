@@ -5,12 +5,25 @@
 	padding-top: inEm(60px);
 	padding-bottom: inEm(60px);
 
+	@include md-down {
+		padding-top: inEm(40px);
+		padding-bottom: inEm(40px);
+	}
+
 	a {
 		text-decoration: none;
 		transition: opacity $transition-default;
 
 		@include mouseover {
 			opacity: .7;
+		}
+	}
+
+	&__logo-container {
+
+		@include md-down {
+			max-width: inEm(300px);
+			text-align: center;
 		}
 	}
 
@@ -24,9 +37,37 @@
 	&__nav {
 		margin-top: inEm(40px);
 
+		@include md-down {
+			position: relative;
+			width: 100%;
+
+			&_active {
+
+				ul {
+					z-index: 5 !important;
+					opacity: 1 !important;
+				}
+			}
+		}
+
 		ul {
 			list-style: none;
 			column-gap: inEm(40px);
+
+			@include md-down {
+				position: absolute;
+				top: calc(100% + #{inEm(10px)});
+				left: 0;
+				right: 0;
+				background: rgba($clr-base, .95);
+				flex-direction: column;
+				align-items: center;
+				padding: inEm(40px) inEm(20px);
+				row-gap: inEm(20px);
+				opacity: 0;
+				z-index: -1;
+				transition: opacity $transition-default;
+			}
 
 			li {
 
@@ -40,11 +81,42 @@
 					font-size: inEm(18px);
 					transition: opacity $transition-default;
 
+					@include md-down {
+						color: $clr-bg;
+					}
+
 					@include mouseover {
 						opacity: .7;
 					}
 				}
 			}
+		}
+	}
+
+	&__menu-button {
+		width: inEm(60px);
+		height: inEm(60px);
+		background: $clr-base;
+		border-radius: inEm(5px);
+		margin-inline: auto;
+
+		@include md-up {
+			display: none;
+		}
+	}
+
+	&__menu-button-image {
+		pointer-events: none;
+		width: 80%;
+		height: 80%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+
+		&_close {
+			display: none;
 		}
 	}
 }

@@ -1,4 +1,6 @@
 .alben-gallery-modal {
+	$root: &;
+
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -40,6 +42,27 @@
 
 	&__fullscreen-button {
 		right: inEm(20px);
+
+		#{$root} {
+
+			&__fullscreen-button-close {
+				display: none;
+			}
+		}
+
+		&_active {
+
+			#{$root} {
+
+				&__fullscreen-button-open {
+					display: none;
+				}
+
+				&__fullscreen-button-close {
+					display: block;
+				}
+			}
+		}
 	}
 
 	&__slider {

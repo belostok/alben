@@ -18,22 +18,43 @@ export const buildImages = ( container ) => {
 	let row               = [];
 	let rowAspectRatioSum = 0;
 
-	images.forEach( img => {
-		const aspectRatio = img.naturalWidth / img.naturalHeight;
-		row.push( { img, aspectRatio } );
-		rowAspectRatioSum += aspectRatio;
+	const allImagesLoaded = () => images.every( img => img.complete );
 
-		if ( rowAspectRatioSum >= containerWidth / img.naturalHeight ) {
-			const scaleFactor = ( containerWidth - gap * ( row.length - 1 ) ) / rowAspectRatioSum;
+	const layoutImages = () => {
+		row               = [];
+		rowAspectRatioSum = 0;
 
-			row.forEach( item => {
-				const width           = item.aspectRatio * scaleFactor;
-				item.img.style.width  = `${ width }px`;
-				item.img.style.height = `${ scaleFactor }px`;
+		images.forEach( img => {
+			const aspectRatio = img.naturalWidth / img.naturalHeight;
+			row.push( { img, aspectRatio } );
+			rowAspectRatioSum += aspectRatio;
+
+			if ( rowAspectRatioSum >= containerWidth / img.naturalHeight ) {
+				const scaleFactor = ( containerWidth - gap * ( row.length - 1 ) ) / rowAspectRatioSum;
+
+				row.forEach( item => {
+					const width           = item.aspectRatio * scaleFactor;
+					item.img.style.width  = `${ width }px`;
+					item.img.style.height = `${ scaleFactor }px`;
+				} );
+
+				row               = [];
+				rowAspectRatioSum = 0;
+			}
+		} );
+	};
+
+	const runLayout = () => {
+		if ( allImagesLoaded() ) {
+			layoutImages();
+		} else {
+			images.forEach( img => {
+				img.addEventListener( 'load', layoutImages );
 			} );
-
-			row               = [];
-			rowAspectRatioSum = 0;
 		}
-	} );
-}
+	};
+
+	runLayout();
+};
+
+export const isMobile = window.matchMedia('(max-width: 991px)').matches;
